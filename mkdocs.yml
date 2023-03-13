@@ -1,24 +1,27 @@
 site_name: My Docs
+theme: readthedocs
 
-nav_repos:
-        - name: backstage
-          import_url: https://github.com/backstage/backstage
-          # forward slash is needed in '/README.md' so that only the README.md in the root
-          # directory is imported and not all README.md files.
-          imports: [
-            docs/publishing.md, docs/integrations/index.md, /README.md,
-            # asset files needed
-            docs/assets/*
-            ]
-        - name: fast-api
-          import_url: https://github.com/tiangolo/fastapi
-          imports: [docs/en/docs/index.md]
+plugins:
+  - search
+  - mkdocs-multirepo-plugin:
+      repos:
+        repos:
+          # There will be a navigation section with this section name
+        - section: Docs Principla
+          # you can define the edit uri path
+          import_url: 'https://github.com/CarlosLopezSoto/DocsPrincipal?branch=main&edit_uri=/blob/main/'
+        - section: Repo 1
+          import_url: 'https://github.com/CarlosLopezSoto/DocsRepo1?branch=main&edit_uri=/blob/main/'
 
 nav:
   - Home: index.md
-  - Repos:
-    - 'https://github.com/CarlosLopezSoto/DocsPrincipal/blob/main/README.md'
-    - 'https://github.com/CarlosLopezSoto/DocsRepo1/blob/main/README.md'
-    - 'https://github.com/CarlosLopezSoto/DocsRepo2/blob/main/README.md'
+  - Repo1 Docs:
+    - Repo1/README.md
+    - Repo1/docs/*
+  - Repo2 Docs:
+    - Repo2/README.md
+    - Repo2/docs/*
 
-theme: readthedocs
+markdown_extensions:
+  - admonition
+  - codehilite
