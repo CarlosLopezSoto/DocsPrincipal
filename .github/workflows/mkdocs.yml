@@ -3,6 +3,8 @@ name: Build and Deploy Docs
 on:
   push:
     branches: [main]
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -18,7 +20,7 @@ jobs:
           python-version: 3.9
 
       - name: Install Dependencies
-        run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin
+        run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin mkdocs-material
 
       - name: Build Docs
         run: mkdocs build
@@ -26,5 +28,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./site
