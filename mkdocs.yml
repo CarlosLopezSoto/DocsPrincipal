@@ -1,5 +1,6 @@
 site_name: My Docs
-theme: readthedocs
+theme:
+  name: material
 
 plugins:
   - search
@@ -16,15 +17,6 @@ plugins:
           import_url: 'https://github.com/CarlosLopezSoto/DocsPrincipal?branch=main&edit_uri=/blob/main/'
         - section: Repo 1
           import_url: 'https://github.com/CarlosLopezSoto/DocsRepo1?branch=main&edit_uri=/blob/main/'
-
-nav:
-  - Home: index.md
-  - Repo1 Docs:
-    - Repo1/README.md
-    - Repo1/docs/*
-  - Repo2 Docs:
-    - Repo2/README.md
-    - Repo2/docs/*
 
 markdown_extensions:
   - admonition
