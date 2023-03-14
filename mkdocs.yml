@@ -2,6 +2,9 @@ site_name: My Docs
 site_url: https://carloslopezsoto.github.io/DocsPrincipal
 theme:
    name: 'material'
+   config:
+    extra:
+      auth: true
    language: es
    palette:
       scheme: 'slate'
@@ -17,17 +20,14 @@ theme:
       
 plugins:
   - search
+  - simple
   - multirepo:
       # (optional) tells multirepo to cleanup the temporary directory after site is built.
       cleanup: true
       nav_repos:
         - name: docs-principal
           import_url: https://github.com/CarlosLopezSoto/DocsPrincipal?branch=main
-          # forward slash is needed in '/README.md' so that only the README.md in the root
-          # directory is imported and not all README.md files.
-          imports: [
-             README.md
-            ]
+          imports: [README.md]
         - name: repo-1
           import_url: https://github.com/CarlosLopezSoto/DocsRepo1?branch=main
           imports: [README.md]
@@ -36,3 +36,8 @@ nav:
       - Home: docs-principal/README.md
   - Repo1: repo-1/README.md
 
+simple:
+  auth:
+    provider: github
+    client_id: f169da3978f2c19d2fa6
+    client_secret: 24aaa6c7a44fd1c1fa1e7b4a08bb748fadadcce4
