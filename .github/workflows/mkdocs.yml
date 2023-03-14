@@ -20,7 +20,7 @@ jobs:
           python-version: 3.9
 
       - name: Install Dependencies
-        run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin mkdocs-simple-plugin
+        run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin mkdocs-github
 
       - name: Build Docs
         run: mkdocs build
