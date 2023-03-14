@@ -20,7 +20,11 @@ theme:
       
 plugins:
   - search
-  - simple
+  - mkdocs-simple-plugin:
+      auth:
+        provider: github
+        client_id: ${{ secrets.CLIENT_ID }}
+        client_secret: ${{ secrets.CLIENT_SECRET }}
   - multirepo:
       # (optional) tells multirepo to cleanup the temporary directory after site is built.
       cleanup: true
@@ -35,9 +39,4 @@ nav:
   - DocsPrincipal:
       - Home: docs-principal/README.md
   - Repo1: repo-1/README.md
-
-simple:
-  auth:
-    provider: github
-    client_id: ${{ secrets.CLIENT_ID }}
-    client_secret: ${{ secrets.CLIENT_SECRET }}
+    
