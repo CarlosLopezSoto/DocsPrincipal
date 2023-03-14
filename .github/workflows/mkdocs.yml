@@ -34,7 +34,7 @@ jobs:
         run: bundle install
 
       - name: Set up Jekyll Auth
-        uses: benbalter/jekyll-auth@v2
+        uses: jekyll-auth/jekyll-auth-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           oauth_client_id: ${{ secrets.CLIENT_ID }}
