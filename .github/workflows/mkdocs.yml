@@ -20,7 +20,7 @@ jobs:
           python-version: 3.9
 
       - name: Install Dependencies
-        run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin mkdocs-material
+        run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin mkdocs-material jinja2 markdown mkdocs-material-extensions pygments pymdown-extensions colorama regex requests 
 
       - name: Build Docs
         run: mkdocs build
