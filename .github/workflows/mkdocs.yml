@@ -20,11 +20,25 @@ jobs:
           python-version: 3.9
 
       - name: Install Dependencies
-        run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin mkdocs-github
+        run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin 
 
       - name: Build Docs
         run: mkdocs build
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.x
+
+      - name: Install Dependencies
+        run: bundle install
+
+      - name: Set up Jekyll Auth
+        uses: benbalter/jekyll-auth-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          oauth_client_id: ${{ secrets.OAUTH_CLIENT_ID }}
+          oauth_client_secret: ${{ secrets.OAUTH_CLIENT_SECRET }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
