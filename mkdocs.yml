@@ -21,5 +21,5 @@ plugins:
 nav:
   - DocsPrincipal:
       - Home: docs-principal/README.md
-  - Repo1: fast-api/README.md
+  - Repo1: repo-1/README.md
 
