@@ -34,11 +34,11 @@ jobs:
         run: bundle install
 
       - name: Set up Jekyll Auth
-        uses: benbalter/jekyll-auth-action@v2
+        uses: benbalter/jekyll-auth@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          oauth_client_id: ${{ secrets.OAUTH_CLIENT_ID }}
-          oauth_client_secret: ${{ secrets.OAUTH_CLIENT_SECRET }}
+          oauth_client_id: ${{ secrets.CLIENT_ID }}
+          oauth_client_secret: ${{ secrets.CLIENT_SECRET }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
