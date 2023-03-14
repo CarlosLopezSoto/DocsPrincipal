@@ -1,7 +1,25 @@
 site_name: My Docs
 theme:
-  name: material
+   name: 'material'
+   palette:
+      scheme: 'slate'
+      primary: 'indigo'
+      accent: 'indigo'
+      features:
+        - navigation.tabs
+      icon:
+        logo: 'material/library'
+        repo: 'material/library'
 
+   favicon: 'path/to/favicon.ico'
+
+markdown_extensions:
+  - markdown.extensions.admonition:
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.toc:
+      permalink: true
+      
 plugins:
   - search
   - multirepo:
@@ -13,11 +31,11 @@ plugins:
           # forward slash is needed in '/README.md' so that only the README.md in the root
           # directory is imported and not all README.md files.
           imports: [
-             /README.md
+             README.md
             ]
         - name: repo-1
           import_url: https://github.com/CarlosLopezSoto/DocsRepo1?branch=main
-          imports: [/README.md]
+          imports: [README.md]
 nav:
   - DocsPrincipal:
       - Home: docs-principal/README.md
