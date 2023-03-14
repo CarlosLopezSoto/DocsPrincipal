@@ -39,5 +39,5 @@ nav:
 simple:
   auth:
     provider: github
-    client_id: f169da3978f2c19d2fa6
-    client_secret: 24aaa6c7a44fd1c1fa1e7b4a08bb748fadadcce4
+    client_id: ${{ secrets.CLIENT_ID }}
+    client_secret: ${{ secrets.CLIENT_SECRET }}
