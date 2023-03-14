@@ -25,20 +25,6 @@ jobs:
       - name: Build Docs
         run: mkdocs build
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7.x
-
-      - name: Install Dependencies
-        run: bundle install
-
-      - name: Set up Jekyll Auth
-        uses: jekyll-auth/jekyll-auth-action@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          oauth_client_id: ${{ secrets.CLIENT_ID }}
-          oauth_client_secret: ${{ secrets.CLIENT_SECRET }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
