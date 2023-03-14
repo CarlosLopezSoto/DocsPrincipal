@@ -18,6 +18,3 @@ plugins:
         - section: Repo 1
           import_url: 'https://github.com/CarlosLopezSoto/DocsRepo1?branch=main&edit_uri=/blob/main/'
 
-markdown_extensions:
-  - admonition
-  - codehilite
