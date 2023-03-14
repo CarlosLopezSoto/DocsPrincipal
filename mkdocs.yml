@@ -2,6 +2,7 @@ site_name: My Docs
 site_url: https://carloslopezsoto.github.io/DocsPrincipal
 theme:
    name: 'material'
+   language: es
    palette:
       scheme: 'slate'
       primary: 'indigo'
@@ -13,13 +14,6 @@ theme:
         repo: 'material/library'
 
    favicon: 'path/to/favicon.ico'
-
-markdown_extensions:
-  - markdown.extensions.admonition:
-  - markdown.extensions.codehilite:
-      guess_lang: false
-  - markdown.extensions.toc:
-      permalink: true
       
 plugins:
   - search
