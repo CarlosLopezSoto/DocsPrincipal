@@ -10,11 +10,19 @@ plugins:
       # if set the docs directory will not be removed when importing docs. When using this with a nav section in an imported repo
       # you must keep the docs directory in the path (e.g., docs/path/to/file.md).
       keep_docs_dir: true
-      repos:
-          # There will be a navigation section with this section name
-        - section: Docs Principla
-          # you can define the edit uri path
-          import_url: 'https://github.com/CarlosLopezSoto/DocsPrincipal?branch=main&edit_uri=/blob/main/'
-        - section: Repo 1
-          import_url: 'https://github.com/CarlosLopezSoto/DocsRepo1?branch=main&edit_uri=/blob/main/'
+      nav_repos:
+        - name: docs-principal
+          import_url: https://github.com/CarlosLopezSoto/DocsPrincipal
+          # forward slash is needed in '/README.md' so that only the README.md in the root
+          # directory is imported and not all README.md files.
+          imports: [
+             /README.md
+            ]
+        - name: repo-1
+          import_url: https://github.com/CarlosLopezSoto/DocsRepo1
+          imports: [/README.md]
+nav:
+  - DocsPrincipal:
+      - Home: docs-principal/README.md
+  - Repo1: fast-api/README.md
 
