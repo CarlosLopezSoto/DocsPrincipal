@@ -9,14 +9,14 @@ plugins:
       cleanup: true
       nav_repos:
         - name: docs-principal
-          import_url: https://github.com/CarlosLopezSoto/DocsPrincipal
+          import_url: https://github.com/CarlosLopezSoto/DocsPrincipal?branch=main
           # forward slash is needed in '/README.md' so that only the README.md in the root
           # directory is imported and not all README.md files.
           imports: [
              /README.md
             ]
         - name: repo-1
-          import_url: https://github.com/CarlosLopezSoto/DocsRepo1
+          import_url: https://github.com/CarlosLopezSoto/DocsRepo1?branch=main
           imports: [/README.md]
 nav:
   - DocsPrincipal:
