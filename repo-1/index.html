@@ -333,7 +333,20 @@
     
       <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
-        <script src="../js/netlify-identity-widget.js"></script>
+        <script src="https://cdn.auth0.com/js/auth0-spa-js/v1.16/auth0-spa-js.production.js"></script>
+      
+        <script src="../const auth0 = new Auth0Client({
+  domain: '{{extra.auth.domain}}',
+  client_id: '{{extra.auth.client_id}}',
+  redirect_uri: window.location.origin
+});
+
+const isAuthenticated = await auth0.isAuthenticated();
+
+if (!isAuthenticated) {
+  await auth0.loginWithRedirect();
+}
+"></script>
       
     
   </body>
