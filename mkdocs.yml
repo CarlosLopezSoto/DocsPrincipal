@@ -30,6 +30,8 @@ plugins:
         - name: repo-1
           import_url: https://github.com/CarlosLopezSoto/DocsRepo1?branch=main
           imports: [README.md]
+extra_javascript:
+  - 'js/netlify-identity-widget.js'
 nav:
   - DocsPrincipal:
       - Home: docs-principal/README.md
