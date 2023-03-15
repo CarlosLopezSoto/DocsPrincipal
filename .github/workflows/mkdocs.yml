@@ -22,6 +22,12 @@ jobs:
       - name: Install Dependencies
         run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin 
 
+      - name: Download Netlify Identity Widget
+        run: |
+          mkdir -p js
+          curl -L "https://identity.netlify.com/v1/netlify-identity-widget.js" -o js/netlify-identity-widget.js
+        working-directory: .
+        
       - name: Build Docs
         run: mkdocs build
 
