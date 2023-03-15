@@ -22,20 +22,11 @@ jobs:
       - name: Install Dependencies
         run: pip install mkdocs mkdocs-material mkdocs-multirepo-plugin 
 
-      - name: Download Netlify Identity Widget
-        run: |
-          mkdir -p js
-          curl -L "https://identity.netlify.com/v1/netlify-identity-widget.js" -o js/netlify-identity-widget.js
-        working-directory: .
+      - name: Install auth0-spa-js
+        run: npm install auth0-spa-js
         
       - name: Build Docs
         run: mkdocs build
-      
-      - name: Install replace tool
-        run: npm install -g replace-in-file
-
-      - name: Add Netlify Identity widget to HTML
-        run: replace-in-file '</head>' '<script src="https://cdn.netlify.com/identity-widget/v1/netlify-identity-widget.js"></script><script>if (window.netlifyIdentity) {window.netlifyIdentity.on("init", user => {if (!user) {window.netlifyIdentity.on("login", () => {document.location.href="/admin/"});}});}</script></head>' site/**/*.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
