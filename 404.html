@@ -11,7 +11,7 @@
       
       
       <link rel="icon" href="/DocsPrincipal/path/to/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
     
     
       
@@ -19,7 +19,7 @@
       
     
     
-      <link rel="stylesheet" href="/DocsPrincipal/assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="/DocsPrincipal/assets/stylesheets/main.7a7fce14.min.css">
       
         
         <link rel="stylesheet" href="/DocsPrincipal/assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -299,22 +299,11 @@
     <script id="__config" type="application/json">{"base": "/DocsPrincipal/", "features": [], "search": "/DocsPrincipal/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="/DocsPrincipal/assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="/DocsPrincipal/assets/javascripts/bundle.407015b8.min.js"></script>
       
         <script src="https://cdn.auth0.com/js/auth0-spa-js/v1.16/auth0-spa-js.production.js"></script>
       
-        <script src="/DocsPrincipal/const auth0 = new Auth0Client({
-  domain: '{{extra.auth.domain}}',
-  client_id: '{{extra.auth.client_id}}',
-  redirect_uri: window.location.origin
-});
-
-const isAuthenticated = await auth0.isAuthenticated();
-
-if (!isAuthenticated) {
-  await auth0.loginWithRedirect();
-}
-"></script>
+        <script src="/DocsPrincipal/auth0.js"></script>
       
     
   </body>
